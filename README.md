@@ -1,69 +1,91 @@
-# Gesture-Controlled-Desktop
-This project implements a real-time gesture-controlled cursor system using computer vision. It uses MediaPipe (built on TensorFlow Lite) for hand tracking and OpenCV for video processing. The system detects hand landmarks and maps finger movements to mouse actions such as cursor movement, clicking, and scrolling using PyAutoGUI.
+# 🖐️ Gesture Controlled Desktop
 
-🖐️ Gesture Controlled Cursor using Computer Vision
-A real-time gesture-based cursor control system built using Python, OpenCV, and MediaPipe. This project enables users to control the mouse cursor using hand gestures captured via a webcam.
+A Python-based project that enables users to control their computer system using hand gestures. This system uses computer vision techniques to track hand movements and perform actions like mouse movement, clicking, and volume control without any physical touch.
 
-🚀 Project Overview
-This project implements a gesture-controlled cursor system using computer vision techniques. It uses MediaPipe's pre-trained hand tracking model (TensorFlow Lite backend) to detect hand landmarks in real time.
+## 🚀 Features
 
-The system maps hand gestures such as finger movements and pinches into mouse actions like cursor movement, clicking, and scrolling.
+* Control mouse cursor using hand gestures
+* Left click and right click using finger gestures
+* Scroll functionality
+* Volume control using hand distance
+* Real-time hand tracking using webcam
+* Works without any external hardware
 
-⚠️ Important Note:
-This project is still under development and not fully polished. It requires further improvements in gesture accuracy, stability, and performance.
+## 🛠️ Technologies Used
 
-🧠 Core Concept
-The system works by:
+* Python
+* OpenCV
+* MediaPipe
+* PyAutoGUI
+* NumPy
 
-Capturing video from the webcam using OpenCV
-Detecting hand landmarks using MediaPipe
-Interpreting gestures based on landmark positions
-Mapping gestures to mouse actions using PyAutoGUI
-🛠️ Tech Stack
-🐍 Python
-Core programming language used for implementation
-📷 OpenCV
-Used for video capture and frame processing
-Converts frames to RGB for MediaPipe processing
-Displays output window with FPS
-✋ MediaPipe (TensorFlow Lite Backend)
-Provides pre-trained hand tracking model
-Detects 21 hand landmarks in real time
-Enables gesture recognition without training a custom AI model
-🖱️ PyAutoGUI
-Controls system mouse
-Used for:
-Moving cursor
-Left click
-Right click
-Scrolling
-🔢 NumPy
-Used for interpolation and coordinate mapping
-📐 Math Library
-Used for calculating distances between landmarks
-⏱️ Time Module
-Used for FPS calculation and performance tracking
-⚙️ Features
-🖱️ Cursor movement using index finger
-👆 Left click using thumb + index finger pinch
-👉 Right click using index + middle finger pinch
-🔄 Scroll using two-finger vertical movement
-🎯 Smooth cursor movement using interpolation
-📊 FPS display for performance monitoring
-📷 Real-time hand tracking
-🧾 Gesture Mapping
-Gesture	Action
-Index finger up	Move cursor
-Thumb + Index pinch	Left click
-Index + Middle pinch	Right click
-Two fingers up (move vertically)	Scroll
-🧪 How It Works (Technical)
-MediaPipe detects hand landmarks (21 points)
-Specific landmarks used:
-Index tip (8)
-Thumb tip (4)
-Middle tip (12)
-Distance between landmarks determines gestures
-Example:
+## 📌 How It Works
 
-distance = hypot(p2.x - p1.x, p2.y - p1.y)
+The system captures video input from the webcam and detects hand landmarks using MediaPipe. Based on the position and distance between fingers, different gestures are recognized and mapped to system controls like mouse movement, clicks, and volume adjustment.
+
+## 📂 Project Structure
+
+```
+Gesture-Controlled-Desktop/
+│── main.py
+│── hand_tracking_module.py
+│── requirements.txt
+│── README.md
+```
+
+## ⚙️ Installation
+
+1. Clone the repository:
+
+```
+git clone https://github.com/your-username/gesture-controlled-desktop.git
+```
+
+2. Navigate to the project folder:
+
+```
+cd gesture-controlled-desktop
+```
+
+3. Install required libraries:
+
+```
+pip install -r requirements.txt
+```
+
+## ▶️ Usage
+
+Run the main file:
+
+```
+python main.py
+```
+
+Make sure your webcam is enabled. Perform hand gestures in front of the camera to control your system.
+
+## 🎯 Applications
+
+* Touchless computer interaction
+* Useful for presentations
+* Accessibility support
+* Human-computer interaction research
+
+## 🔮 Future Improvements
+
+* Add gesture customization
+* Improve accuracy in low light conditions
+* Add multi-hand support
+* Integrate more system controls
+
+## 🙋‍♀️ Author
+
+Ayesha
+B.E. in AI & Data Science
+
+## ⭐ Contributing
+
+Feel free to fork this repository and contribute by submitting a pull request.
+
+## 📜 License
+
+This project is open-source and available under the MIT License.
